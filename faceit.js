@@ -1,11 +1,4 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-const axios = require('axios');
-const dotenv = require('dotenv');
-dotenv.config({ path: `${__dirname}/./config.env` });
-
-const token = process.env.DISCORD_KEY;
-const apiKey = process.env.API_KEY; // Replace with your actual FACEIT API key
-const hubId = 'aa40994c-f893-45bb-9c2f-b8662008ea33'; // Replace with your hub ID
 
 const client = new Client({
   intents: [
@@ -14,6 +7,18 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
   ],
 });
+
+const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config({ path: `${__dirname}/./config.env` });
+
+
+
+const token = process.env.DISCORD_KEY;
+const apiKey = process.env.API_KEY; // Replace with your actual FACEIT API key
+const hubId = 'aa40994c-f893-45bb-9c2f-b8662008ea33'; // Replace with your hub ID
+
+
 
 
 client.on('ready', () => {
@@ -37,7 +42,7 @@ client.on('messageCreate', async (message) => {
         return `${member.nickname} - ${member.user_id}`;
       }).join('\n');
       // Send the list of nicknames as a response
-      message.reply(`Members and their roles:\n${memberList}`);
+      message.reply(`Names and GUIDS:\n${memberList}`);
     } catch (error) {
       console.error('Error fetching data:', error);
       message.reply('An error occurred while fetching member data.');
