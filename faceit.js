@@ -27,7 +27,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', async (message) => {
   if (message.content === 'ls') {
-    const apiUrl = `https://open.faceit.com/data/v4/hubs/${hubId}/members?offset=0&limit=10&fields=nickname,user_id`;
+    const apiUrl = `https://open.faceit.com/data/v4/hubs/${hubId}/members?offset=0&limit=50&fields=nickname,user_id`;
 
     try {
       const response = await axios.get(apiUrl, {

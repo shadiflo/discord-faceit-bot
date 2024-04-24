@@ -7,7 +7,6 @@ const client = new Client({
   ],
 });
 
-const token = 'MTAzMjY5MzU1MzQ3MTcwNTI1MA.GFv-Ko.GbPcPBbkOpVhFMv58-HJsh9me4_rjhp9kss0-o';
 
 client.on('ready', () => {
  
@@ -19,7 +18,7 @@ client.on('ready', () => {
 
 
 
-
+const token = process.env.DISCORD_KEY;
 const axios = require('axios');
 
 const apiKey = '803a2694-c9ce-4605-8cd8-82258018096a'; // Replace with your actual FACEIT API key

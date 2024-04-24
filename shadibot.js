@@ -24,10 +24,14 @@ const apiKey = process.env.API_KEY; // Replace with your actual FACEIT API key
 const scheduledTasks = [];
 
 const messages = [
-    { content: 'Join our Clan: https://www.faceit.com/en/inv/xb7l4wE', interval: 2000,color: '#FF0000' }, // Send 'Message 1' every 6 seconds
-    { content: 'Minty thanks for denying my golden application u nub', interval: 3000 ,color: '#00ff00'}, // Send 'Message 2' every 10 seconds
-    { content: 'JS>TS', interval: 4000 ,color: '#0000FF'}, // Send 'Message 3' every 15 seconds
-  ];
+  {
+    content: "Join our Clan: https://www.faceit.com/en/inv/xb7l4wE",
+    interval: 2000,
+    color: "#FF0000",
+  }, // Send 'Message 1' every 6 seconds
+  { content: "Testing", interval: 3000, color: "#00ff00" }, // Send 'Message 2' every 10 seconds
+  { content: "JS>TS", interval: 4000, color: "#0000FF" }, // Send 'Message 3' every 15 seconds
+];
 
 
   const sendScheduledMessage = async (message) => {
